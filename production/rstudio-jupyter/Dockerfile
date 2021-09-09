@@ -28,21 +28,26 @@ RUN ln -s /opt/conda/lib/R/library/littler/examples/installGithub.r /usr/local/b
 
 ENV PATH=$PATH:/usr/lib/rstudio-server/bin
 
-ENV DSBASE_VERSION "6.1.0"
-ENV DSOPAL_VERSION "1.2.0"
 ENV OPALR_VERSION "1.4.1"
-ENV DSMOLGENIS_ARMADILLO_VERSION "v1.3.5"
 ENV DSI_VERSION "1.3.0"
+ENV DSOPAL_VERSION "1.2.0"
+ENV DSMOLGENIS_ARMADILLO_VERSION "v1.3.5"
 
 # Install connection packages
 RUN installGithub.r "molgenis/molgenis-r-datashield@${DSMOLGENIS_ARMADILLO_VERSION}" && \
     installGithub.r "obiba/opalr@${OPALR_VERSION}" && \
     installGithub.r "datashield/dsi@${DSI_VERSION}" && \
     installGithub.r "datashield/DSOpal@${DSOPAL_VERSION}"
+
+ENV DSBASECLIENT_VERSION "6.1.0"
+
 # Install DataSHIELD client
-RUN installGithub.r "datashield/dsBaseClient@${DSBASE_VERSION}"
+RUN installGithub.r "datashield/dsBaseClient@${DSBASECLIENT_VERSION}"
+
+ENV DSHELPER_VERSION "HEAD"
+
 # Install helper function 
-RUN installGithub.r "lifecycle-project/ds-helper"
+RUN installGithub.r "lifecycle-project/ds-helper@${DSHELPER_VERSION}"
 
 ENV PASSWORD admin
 ENV USER ${NB_USER}
