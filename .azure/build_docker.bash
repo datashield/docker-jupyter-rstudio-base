@@ -1,7 +1,7 @@
 #!/bin/bash
 # Azure Pipeline predefined environment variables
 # - BUILD_REASON: we check on "PullRequest"
-# - AGENT_BUILDDIRECTORY: we need go back to this directory after the loop
+# - BUILD_REPOSITORY_LOCALPATH: we need go back to the directory that contains the sources after the loop
 # - AGENT_HOMEDIRECTORY: we need this to store the docker credentials
 # - SYSTEM_PULLREQUEST_PULLREQUESTID: PullRequestID from GitHub
 # - SYSTEM_PULLREQUEST_TARGETBRANCH: PullRequest target branch e.g. main
@@ -9,34 +9,38 @@
 # - DOCKERHUB_AUTH: we use this credential to push the dockers to the registry
 # - GITHUB_TOKEN: semantic release uses this environment variable to push to github
 
-echo "Set the docker authentication configuration"
-DOCKER_CONFIG=${AGENT_HOMEDIRECTORY}/.docker
-mkdir -p ${DOCKER_CONFIG}
+echo "Set the docker authentication configuration in ${AGENT_HOMEDIRECTORY}/.docker"
+DOCKER_CONFIG="${AGENT_HOMEDIRECTORY}/.docker"
+mkdir -p "${DOCKER_CONFIG}"
 set +x && echo "{\"auths\": \"https://index.docker.io/v1/\": {\"auth\": \"${DOCKERHUB_AUTH}\"}, \"registry.hub.docker.com\": {\"auth\": \"${DOCKERHUB_AUTH}\"}}}" > "${DOCKER_CONFIG}/config.json"
 
-
+cd "${BUILD_REPOSITORY_LOCALPATH}"
 envs=($(ls -d */))
-for env in "${envs[@]}"
+for envDir in "${envs[@]}"
 do
-  cd "${$AGENT_BUILDDIRECTORY}"
-  cd "${env}"
+  cd "${BUILD_REPOSITORY_LOCALPATH}"
+  cd "${envDir}"
+  env=${envDir::-1}
   echo "Building for environment: [ ${env} ]"
   images=($(ls -d */))
   originImageDir=$(pwd)
-  for image in "${images[@]}"
+  for imageDir in "${images[@]}"
   do
     cd ${originImageDir}
-    cd "${image}"
-    if [[ "${BUILD_REASON}" == "Pullrequest" ]] 
+    cd "${imageDir}"
+    image=${imageDir::-1}
+    if [[ "${BUILD_REASON}" == "PullRequest" ]] 
     then     
-      echo "Building image: [ ${image} ]"  
+      echo "  Building image: [ ${image} ]"  
       CHANGES=$(git diff --name-only origin/${SYSTEM_PULLREQUEST_TARGETBRANCH} -- .)
       if [[ ! -z "${CHANGES}" ]]
       then
-         docker build . --pull --no-cache --force-rm -t "datashield/${image}:PR-${SYSTEM_PULLREQUEST_PULLREQUESTID}"
+        docker build . --pull --no-cache --force-rm -t "datashield/${image}:PR-${SYSTEM_PULLREQUEST_PULLREQUESTID}"
+      else
+        echo "    Nothing to do for [ ${image} ]"
       fi
     else
-      echo "Release image: ${image}"
+      echo "  Release image: ${image}"
       OLD_TAG=$(node -p "require('./package').version")
       npm install --ci
       npm run release --ci
@@ -48,4 +52,4 @@ do
       fi
     fi
   done
-
+done
