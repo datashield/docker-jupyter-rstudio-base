@@ -4,7 +4,7 @@
   "description": "RStudio for JupyterHub with dsBaseClient 6.1.0 and dsHelper 0.0.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:datashield/docker-jupyter-rstudio-base.git"
+    "url": "https://github.com/datashield/docker-jupyter-rstudio-base.git"
   },
   "author": "Sido Haakma",
   "devDependencies": {
