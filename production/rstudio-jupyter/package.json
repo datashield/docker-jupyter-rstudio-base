@@ -4,7 +4,7 @@
   "description": "RStudio for JupyterHub with dsBaseClient 6.1.0 and dsHelper 0.0.0",
   "repository": {
     "type": "git",
-    "url": "git@github.com:molgenis/molgenis-ops-docker.git"
+    "url": "git@github.com:datashield/docker-jupyter-rstudio-base.git"
   },
   "author": "Sido Haakma",
   "devDependencies": {
@@ -19,7 +19,7 @@
     "release": "semantic-release --ci"
   },
   "release": {
-    "branches": ["master", "main"],
+    "branches": [ "main" ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
