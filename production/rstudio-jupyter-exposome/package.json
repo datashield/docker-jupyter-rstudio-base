@@ -16,7 +16,7 @@
     "semantic-release-commit-filter": "^1.0.2"
   },
   "scripts": {
-    "release": "semantic-release --ci --branches jose"
+    "release": "semantic-release --ci --branches main"
   },
   "release": {
     "branches": [
