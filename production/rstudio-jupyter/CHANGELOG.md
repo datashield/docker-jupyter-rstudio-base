@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.0...@datashield/rstudio-jupyter-v1.0.1) (2021-09-22)
+
+
+### Bug Fixes
+
+* method documentation of base image ([75fb987](https://github.com/datashield/docker-jupyter-rstudio-base/commit/75fb987291a87221157893ef84d150922dd2547b))
+
 # 1.0.0 (2021-09-22)
 
 
