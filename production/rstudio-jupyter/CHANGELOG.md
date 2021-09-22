@@ -1,3 +1,10 @@
+## [1.0.9](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.8...@datashield/rstudio-jupyter-v1.0.9) (2021-09-22)
+
+
+### Bug Fixes
+
+* opalr version dependency on DSOpal ([8a024f7](https://github.com/datashield/docker-jupyter-rstudio-base/commit/8a024f74814b361687ad7548db71874fbecfaed3))
+
 ## [1.0.8](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.7...@datashield/rstudio-jupyter-v1.0.8) (2021-09-22)
 
 
