@@ -1,3 +1,10 @@
+## [1.0.6](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.5...@datashield/rstudio-jupyter-v1.0.6) (2021-09-22)
+
+
+### Bug Fixes
+
+* usage for rstudio-jupyter image ([cad7aca](https://github.com/datashield/docker-jupyter-rstudio-base/commit/cad7aca9351accb726acccd12f93fdc2ead73e00))
+
 ## [1.0.5](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.4...@datashield/rstudio-jupyter-v1.0.5) (2021-09-22)
 
 
