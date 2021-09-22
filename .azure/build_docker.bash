@@ -9,8 +9,9 @@
 # - DOCKERHUB_AUTH: we use this credential to push the dockers to the registry
 # - GITHUB_TOKEN: semantic release uses this environment variable to push to github
 
-echo "Set the docker authentication configuration in /home/vsts/.docker"
-DOCKER_CONFIG="/home/vsts/.docker"
+AGENT_USER_HOMEDIRECTORY=$(echo "${AGENT_HOMEDIRECTORY}" | cut -d/ -f 1-3)
+echo "Set the docker authentication configuration in ${AGENT_USER_HOMEDIRECTORY}/.docker"
+DOCKER_CONFIG="${AGENT_USER_HOMEDIRECTORY}/.docker"
 mkdir -p "${DOCKER_CONFIG}"
 set +x && echo "{\"auths\": {\"https://index.docker.io/v1/\": {\"auth\": \"${DOCKERHUB_AUTH}\"}, \"registry.hub.docker.com\": {\"auth\": \"${DOCKERHUB_AUTH}\"}}}" > "${DOCKER_CONFIG}/config.json"
 
@@ -48,7 +49,7 @@ do
       if [[ "${TAG}" != "${OLD_TAG}" ]] 
       then
         docker build . --pull --no-cache --force-rm -t datashield/${image}:latest -t datashield/${image}:${TAG}
-        docker push datashield/${image}
+        docker push datashield/${image} --all-tags
       fi
     fi
   done
