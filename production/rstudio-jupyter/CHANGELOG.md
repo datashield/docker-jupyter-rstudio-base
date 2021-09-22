@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.2...@datashield/rstudio-jupyter-v1.0.3) (2021-09-22)
+
+
+### Bug Fixes
+
+* align docs with the rest of the pipelines ([4793a3c](https://github.com/datashield/docker-jupyter-rstudio-base/commit/4793a3c0cdf1c3ed2e716aae93d553b55df8bc7e))
+
 ## [1.0.2](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.1...@datashield/rstudio-jupyter-v1.0.2) (2021-09-22)
 
 
