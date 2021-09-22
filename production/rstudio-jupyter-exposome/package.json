@@ -1,6 +1,7 @@
 {
   "name": "@datashield/rstudio-jupyter-exposome",
   "version": "1.0.0",
+  "license": "LGPL-3.0",
   "description": "RStudio for JupyterHub with dsBaseClient 6.1.0 and dsExposomeClient ",
   "repository": {
     "type": "git",
