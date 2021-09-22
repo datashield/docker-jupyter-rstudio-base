@@ -1,3 +1,11 @@
+## [1.0.8](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.7...@datashield/rstudio-jupyter-v1.0.8) (2021-09-22)
+
+
+### Bug Fixes
+
+* added github release plugin to automatically release the images ([adf43d1](https://github.com/datashield/docker-jupyter-rstudio-base/commit/adf43d13220eef8f6fc583af0cd27adeb80b2240))
+* run the image locally in deamon mode ([3e567f9](https://github.com/datashield/docker-jupyter-rstudio-base/commit/3e567f999669a17edcf577c0b8e7122a43ee43b5))
+
 ## [1.0.7](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.6...@datashield/rstudio-jupyter-v1.0.7) (2021-09-22)
 
 
