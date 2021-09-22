@@ -9,10 +9,8 @@
 # - DOCKERHUB_AUTH: we use this credential to push the dockers to the registry
 # - GITHUB_TOKEN: semantic release uses this environment variable to push to github
 
-echo "Set the docker authentication configuration in ${AGENT_HOMEDIRECTORY}/.docker"
-DOCKER_CONFIG="${AGENT_HOMEDIRECTORY}/.docker"
-mkdir -p "${DOCKER_CONFIG}"
-set +x && echo "{\"auths\": {\"https://index.docker.io/v1/\": {\"auth\": \"${DOCKERHUB_AUTH}\"}, \"registry.hub.docker.com\": {\"auth\": \"${DOCKERHUB_AUTH}\"}}}" > "${DOCKER_CONFIG}/config.json"
+echo "Set the docker authentication configuration"
+set +x && echo "{\"auths\": {\"https://index.docker.io/v1/\": {\"auth\": \"${DOCKERHUB_AUTH}\"}, \"registry.hub.docker.com\": {\"auth\": \"${DOCKERHUB_AUTH}\"}}}" | echo "This is a config" | docker config create build-docker-config -
 
 cd "${BUILD_REPOSITORY_LOCALPATH}"
 envs=($(ls -d */))
