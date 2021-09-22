@@ -11,6 +11,7 @@ ENV RSTUDIO_VERSION "1.4.1717"
 # Make sure RStudio run when booting the image
 ENV RSESSION_PROXY_RSTUDIO_1_4=yes
 
+# Install OS dependencies of RStudio
 RUN apt update && \
     apt install -y libgsl0-dev zlib1g-dev libxml2-dev
 
@@ -23,6 +24,7 @@ RUN curl --silent -L --fail https://download2.rstudio.org/server/bionic/amd64/rs
 RUN chown -R ${NB_USER}:rstudio-server /var/lib/rstudio-server && \
     chmod -R g=u /var/lib/rstudio-server
 
+# Install littler to be able to make use of installGithub.r
 RUN R -e "install.packages('littler',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
 RUN ln -s /opt/conda/bin/Rscript /usr/bin/r
