@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.6...@datashield/rstudio-jupyter-v1.0.7) (2021-09-22)
+
+
+### Bug Fixes
+
+* show where you can access rstudio locally ([c1d4c2e](https://github.com/datashield/docker-jupyter-rstudio-base/commit/c1d4c2ec5ca87daaa1dadc97dc3984513f66cacf))
+
 ## [1.0.6](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.5...@datashield/rstudio-jupyter-v1.0.6) (2021-09-22)
 
 
