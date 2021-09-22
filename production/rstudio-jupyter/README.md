@@ -13,7 +13,7 @@ There are 2 packages pre-installed on the Rstudio.
 ## Usage
 You can use the image locally as well. Run the following snippet:
 
-`docker run -p 8787:8787 datashield/rstudio-jupyter:latest`
+`docker run -p 8787:8787 datashield/rstudio-jupyter:latest -d`
 
 You can access rstudio on http://localhost:8787
 ### Authentication
