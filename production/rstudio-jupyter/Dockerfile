@@ -4,7 +4,6 @@ RUN python3 -m pip install jupyter-rsession-proxy
 RUN python3 -m pip install jupyter-server-proxy
 RUN jupyter labextension install @jupyterlab/server-proxy
 
-# install rstudio-server
 USER root
 
 ENV RSTUDIO_VERSION "1.4.1717"
@@ -18,7 +17,7 @@ RUN curl --silent -L --fail https://download2.rstudio.org/server/bionic/amd64/rs
     rm /tmp/rstudio.deb && \
     apt clean && rm -rf /var/lib/apt/lists/* 
 
-RUN chown -R $NB_USER:rstudio-server /var/lib/rstudio-server && \
+RUN chown -R ${NB_USER}:rstudio-server /var/lib/rstudio-server && \
     chmod -R g=u /var/lib/rstudio-server
 
 RUN R -e "install.packages('littler',dependencies=TRUE, repos='http://cran.rstudio.com/')"
@@ -28,12 +27,13 @@ RUN ln -s /opt/conda/lib/R/library/littler/examples/installGithub.r /usr/local/b
 
 ENV PATH=$PATH:/usr/lib/rstudio-server/bin
 
+# Specify dependency versions
 ENV OPALR_VERSION "1.4.1"
 ENV DSI_VERSION "1.3.0"
 ENV DSOPAL_VERSION "1.2.0"
 ENV DSMOLGENIS_ARMADILLO_VERSION "v1.3.5"
 
-# Install connection packages
+# Install dependant packages for dsBaseClient
 RUN installGithub.r "molgenis/molgenis-r-datashield@${DSMOLGENIS_ARMADILLO_VERSION}" && \
     installGithub.r "obiba/opalr@${OPALR_VERSION}" && \
     installGithub.r "datashield/dsi@${DSI_VERSION}" && \
@@ -46,7 +46,7 @@ RUN installGithub.r "datashield/dsBaseClient@${DSBASECLIENT_VERSION}"
 
 ENV DSHELPER_VERSION "HEAD"
 
-# Install helper function 
+# Install dsHelper client 
 RUN installGithub.r "lifecycle-project/ds-helper@${DSHELPER_VERSION}"
 
 ENV PASSWORD admin
