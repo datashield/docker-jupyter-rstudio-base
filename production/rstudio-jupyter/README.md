@@ -14,5 +14,7 @@ There are 2 packages pre-installed on the Rstudio.
 You can use the image locally as well. Run the following snippet:
 
 `docker run -p 8787:8787 datashield/rstudio-jupyter:latest`
+
+You can access rstudio on http://localhost:8787
 ### Authentication
 We authenticate with the central authentication mechanism of [MOLGENIS](https://molgenis.org) and [ELIXIR](https://elixir-europe.org/services/compute/aai).
