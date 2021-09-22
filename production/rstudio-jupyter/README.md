@@ -11,5 +11,8 @@ There are 2 packages pre-installed on the Rstudio.
 - [dsHelper](https://github.com/lifecycle-project/ds-helper)=0.0.0.9008
 
 ## Usage
+You can use the image locally as well. Run the following snippet:
+
+`docker run -p 8787:8787 datashield/rstudio-jupyter:latest`
 ### Authentication
 We authenticate with the central authentication mechanism of [MOLGENIS](https://molgenis.org) and [ELIXIR](https://elixir-europe.org/services/compute/aai).
