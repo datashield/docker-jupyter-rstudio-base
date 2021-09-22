@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.4...@datashield/rstudio-jupyter-v1.0.5) (2021-09-22)
+
+
+### Bug Fixes
+
+* set docker config in current dit ([63e4519](https://github.com/datashield/docker-jupyter-rstudio-base/commit/63e451989fcc8906c154c888e1e0a5b92a7f4260))
+
 ## [1.0.4](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.3...@datashield/rstudio-jupyter-v1.0.4) (2021-09-22)
 
 
