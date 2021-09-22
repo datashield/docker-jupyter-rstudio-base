@@ -35,7 +35,7 @@ ENV PATH=$PATH:/usr/lib/rstudio-server/bin
 # Specify dependency versions
 ENV OPALR_VERSION "1.4.1"
 ENV DSI_VERSION "1.3.0"
-ENV DSOPAL_VERSION "1.2.0"
+ENV DSOPAL_VERSION "1.1.0"
 ENV DSMOLGENIS_ARMADILLO_VERSION "v1.3.5"
 
 # Install dependant packages for dsBaseClient
