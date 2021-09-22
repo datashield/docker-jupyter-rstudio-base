@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.1...@datashield/rstudio-jupyter-v1.0.2) (2021-09-22)
+
+
+### Bug Fixes
+
+* docker authentication and docs of methods ([1a88d18](https://github.com/datashield/docker-jupyter-rstudio-base/commit/1a88d18d98b62362aedffcc47ba747490fc793ad))
+
 ## [1.0.1](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.0...@datashield/rstudio-jupyter-v1.0.1) (2021-09-22)
 
 
