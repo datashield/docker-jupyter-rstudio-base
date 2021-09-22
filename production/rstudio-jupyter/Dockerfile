@@ -6,7 +6,9 @@ RUN jupyter labextension install @jupyterlab/server-proxy
 
 USER root
 
+# Specify RStudio version
 ENV RSTUDIO_VERSION "1.4.1717"
+# Make sure RStudio run when booting the image
 ENV RSESSION_PROXY_RSTUDIO_1_4=yes
 
 RUN apt update && \
@@ -17,6 +19,7 @@ RUN curl --silent -L --fail https://download2.rstudio.org/server/bionic/amd64/rs
     rm /tmp/rstudio.deb && \
     apt clean && rm -rf /var/lib/apt/lists/* 
 
+# RStudio needs to run as the notebook user
 RUN chown -R ${NB_USER}:rstudio-server /var/lib/rstudio-server && \
     chmod -R g=u /var/lib/rstudio-server
 
