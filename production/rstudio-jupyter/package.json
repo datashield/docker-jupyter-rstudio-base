@@ -1,6 +1,6 @@
 {
   "name": "@datashield/rstudio-jupyter",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "RStudio for JupyterHub with dsBaseClient 6.1.0 and dsHelper 0.0.0",
   "repository": {
     "type": "git",
