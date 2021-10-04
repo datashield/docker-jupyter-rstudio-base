@@ -1,3 +1,10 @@
+# 1.0.0 (2021-10-04)
+
+
+### Features
+
+* add dsOmicsClient environment ([e86d596](https://github.com/datashield/docker-jupyter-rstudio-base/commit/e86d596ba22b9619df9d745189da0dc230226946))
+
 ## [1.0.2](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-exposome-v1.0.1...@datashield/rstudio-jupyter-exposome-v1.0.2) (2021-09-22)
 
 
