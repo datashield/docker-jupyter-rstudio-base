@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-dev-v1.0.0...@datashield/rstudio-jupyter-dev-v1.0.1) (2021-10-20)
+
+
+### Bug Fixes
+
+* **dev:** updated readme with right versions ([b4c5c22](https://github.com/datashield/docker-jupyter-rstudio-base/commit/b4c5c222e5a1451b159849e03c90fa4b3bc88eef))
+
 # 1.0.0 (2021-10-20)
 
 
