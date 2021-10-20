@@ -28,13 +28,14 @@ RUN chown -R ${NB_USER}:rstudio-server /var/lib/rstudio-server && \
 RUN R -e "install.packages('littler',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
 RUN ln -s /opt/conda/bin/Rscript /usr/bin/r
+RUN ln -s /opt/conda/lib/R/library/littler/examples/install2.r /usr/local/bin/install2.r 
 RUN ln -s /opt/conda/lib/R/library/littler/examples/installGithub.r /usr/local/bin/installGithub.r 
 
 ENV PATH=$PATH:/usr/lib/rstudio-server/bin
 
 # Specify dependency versions
 ENV OPALR_VERSION "1.4.1"
-ENV DSI_VERSION "1.4.0"
+ENV DSI_VERSION "1.3.0"
 ENV DSOPAL_VERSION "1.3.1"
 ENV DSMOLGENIS_ARMADILLO_VERSION "v1.3.7"
 
@@ -44,12 +45,12 @@ RUN installGithub.r "molgenis/molgenis-r-datashield@${DSMOLGENIS_ARMADILLO_VERSI
     installGithub.r "datashield/dsi@${DSI_VERSION}" && \
     installGithub.r "datashield/DSOpal@${DSOPAL_VERSION}"
 
-ENV DSBASECLIENT_BRANCH "6.2-dev"
+ENV DSBASECLIENT_BRANCH "v6.2-dev"
 
 # Install DataSHIELD client
 RUN installGithub.r "datashield/dsBaseClient@${DSBASECLIENT_BRANCH}"
 
-ENV DSHELPER_VERSION "HEAD"
+ENV DSHELPER_VERSION "traj-fun"
 
 # Install dsHelper client 
 RUN installGithub.r "lifecycle-project/ds-helper@${DSHELPER_VERSION}"
