@@ -36,7 +36,7 @@ ENV PATH=$PATH:/usr/lib/rstudio-server/bin
 ENV OPALR_VERSION "1.4.1"
 ENV DSI_VERSION "1.3.0"
 ENV DSOPAL_VERSION "1.1.0"
-ENV DSMOLGENIS_ARMADILLO_VERSION "v1.3.5"
+ENV DSMOLGENIS_ARMADILLO_VERSION "v1.3.7"
 
 # Install dependant packages for dsBaseClient
 RUN installGithub.r "molgenis/molgenis-r-datashield@${DSMOLGENIS_ARMADILLO_VERSION}" && \
