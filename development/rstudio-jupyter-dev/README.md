@@ -7,8 +7,8 @@ You can use this package in any jupyter hub environment
 
 ## Contents
 There are 2 packages pre-installed on the Rstudio.
-- [dsBaseClient](https://github.com/datashield/dsBaseClient/tree/6.2-dev)=6.2-dev
-- [dsHelper](https://github.com/lifecycle-project/ds-helper)=0.0.0.9008
+- [dsBaseClient](https://github.com/datashield/dsBaseClient/tree/x.x-dev)=x.x-dev
+- [dsHelper](https://github.com/lifecycle-project/ds-helper)=x.x.x
 
 Additional packages that you need for a workshop for example.
 - [tidyverse](https://www.tidyverse.org/packages/)
