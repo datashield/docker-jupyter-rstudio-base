@@ -1,3 +1,10 @@
+## [1.0.10](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.9...@datashield/rstudio-jupyter-v1.0.10) (2021-10-20)
+
+
+### Bug Fixes
+
+* upgrade DSMolgenisArmadillo to 1.3.7 ([ae0bd25](https://github.com/datashield/docker-jupyter-rstudio-base/commit/ae0bd2542e9a483a9970cd361eecbac9d984dfb2))
+
 ## [1.0.9](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.8...@datashield/rstudio-jupyter-v1.0.9) (2021-09-22)
 
 
