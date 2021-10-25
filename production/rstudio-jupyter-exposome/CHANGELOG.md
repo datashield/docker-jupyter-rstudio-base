@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-exposome-v1.0.2...@datashield/rstudio-jupyter-exposome-v1.0.3) (2021-10-25)
+
+
+### Bug Fixes
+
+* **exposome:** updated base layer to 1.0.9 and fixed dependency installation ([b8196f3](https://github.com/datashield/docker-jupyter-rstudio-base/commit/b8196f3c91cd77c1a942566e53fdbefe3d6a6b3d))
+
 ## [1.0.2](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-exposome-v1.0.1...@datashield/rstudio-jupyter-exposome-v1.0.2) (2021-09-22)
 
 
