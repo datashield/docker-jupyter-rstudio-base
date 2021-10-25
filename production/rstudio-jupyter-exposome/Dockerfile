@@ -1,23 +1,20 @@
-FROM datashield/rstudio-jupyter:1.0.1
+FROM datashield/rstudio-jupyter:1.0.9
 
 USER root
-
 
 RUN apt update && apt install -y r-base-dev
 
 # Install BioConductor symlink for littler
 RUN ln -s /opt/conda/lib/R/library/littler/examples/installBioc.r /usr/local/bin/installBioc.r 
 
-# Specify dependency versions
-ENV BIOCMANAGER_VERSION "v1.30.16"
-ENV DSEXPOSOME_VERSION "v1.0.1"
-
 # Install dsExposome dependencies
+ENV BIOCMANAGER_VERSION "v1.30.16"
 RUN installGithub.r "Bioconductor/BiocManager@${BIOCMANAGER_VERSION}"
-RUN installBioc.r vctrs
+RUN installBioc.r S4Vectors
 
 # Install dsExposome
-RUN installGithub.r "isglobal-brge/dsExposomeClient@${DSEXPOSOME_VERSION}"
+ENV DSEXPOSOME_VERSION "v1.0.1"
+RUN installGithub.r "isglobal-brge/dsExposomeClient@${DSEXPOSOME_VERSION}" --deps=TRUE
 
 USER ${NB_USER}
 
