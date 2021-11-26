@@ -33,10 +33,10 @@ RUN ln -s /opt/conda/lib/R/library/littler/examples/installGithub.r /usr/local/b
 ENV PATH=$PATH:/usr/lib/rstudio-server/bin
 
 # Specify dependency versions
-ENV OPALR_VERSION "1.4.1"
+ENV OPALR_VERSION "3.0.2"
 ENV DSI_VERSION "1.3.0"
-ENV DSOPAL_VERSION "1.1.0"
-ENV DSMOLGENIS_ARMADILLO_VERSION "v1.3.7"
+ENV DSOPAL_VERSION "1.3.1"
+ENV DSMOLGENIS_ARMADILLO_VERSION "v1.4.0"
 
 # Install dependant packages for dsBaseClient
 RUN installGithub.r "molgenis/molgenis-r-datashield@${DSMOLGENIS_ARMADILLO_VERSION}" && \
@@ -49,7 +49,7 @@ ENV DSBASECLIENT_VERSION "6.1.0"
 # Install DataSHIELD client
 RUN installGithub.r "datashield/dsBaseClient@${DSBASECLIENT_VERSION}"
 
-ENV DSHELPER_VERSION "HEAD"
+ENV DSHELPER_VERSION "0.1.3"
 
 # Install dsHelper client 
 RUN installGithub.r "lifecycle-project/ds-helper@${DSHELPER_VERSION}"
