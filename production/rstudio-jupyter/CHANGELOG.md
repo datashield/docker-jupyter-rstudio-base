@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.10...@datashield/rstudio-jupyter-v1.1.0) (2021-11-26)
+
+
+### Features
+
+* **rstudio-base:** updated dependencies ([63f37e3](https://github.com/datashield/docker-jupyter-rstudio-base/commit/63f37e3cb28a3ac5defafa2c62ce6a0cdac64a83))
+
 ## [1.0.10](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.9...@datashield/rstudio-jupyter-v1.0.10) (2021-10-20)
 
 
