@@ -1,11 +1,11 @@
-FROM datashield/rstudio-jupyter:1.0.9
+FROM datashield/rstudio-jupyter:1.1.0
 
 USER root
 
 RUN apt update && apt install -y r-base-dev
 
-# Install dsExposome
-ENV DSEXPOSOME_VERSION "v0.0.3-dev"
+# Install dsMediationClient
+ENV DSMEDIATION_VERSION "v0.0.3-dev"
 RUN installGithub.r "datashield/dsMediationClient@${DSMEDIATION_VERSION}" --deps=TRUE
 
 USER ${NB_USER}
