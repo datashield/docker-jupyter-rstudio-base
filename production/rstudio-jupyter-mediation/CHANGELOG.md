@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-mediation-v1.0.0...@datashield/rstudio-jupyter-mediation-v1.1.0) (2021-12-10)
+
+
+### Bug Fixes
+
+* version tag and base layer ([225565a](https://github.com/datashield/docker-jupyter-rstudio-base/commit/225565aa7df27bcf314bb442b1a73e538ada970c))
+
+
+### Features
+
+* **mediation:** add version 0.0.3-dev to iamge ([f532917](https://github.com/datashield/docker-jupyter-rstudio-base/commit/f53291739f5d1818d755c64d3b663fb2b2d4f3f0))
+
 # 1.0.0 (2021-11-14)
 
 
