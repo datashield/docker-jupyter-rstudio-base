@@ -13,7 +13,7 @@ RUN installGithub.r "Bioconductor/BiocManager@${BIOCMANAGER_VERSION}"
 RUN installBioc.r S4Vectors
 
 # Install dsExposome
-ENV DSEXPOSOME_VERSION "v1.0.1"
+ENV DSEXPOSOME_VERSION "v1.0.3"
 RUN installGithub.r "isglobal-brge/dsExposomeClient@${DSEXPOSOME_VERSION}" --deps=TRUE
 
 USER ${NB_USER}
