@@ -1,4 +1,4 @@
-FROM datashield/rstudio-jupyter:1.1.0
+FROM datashield/rstudio-jupyter:1.2.0
 
 USER root
 
@@ -13,7 +13,7 @@ RUN installGithub.r "Bioconductor/BiocManager@${BIOCMANAGER_VERSION}"
 RUN installBioc.r S4Vectors
 
 # Install dsExposome
-ENV DSEXPOSOME_VERSION "v1.0.3"
+ENV DSEXPOSOME_VERSION "v1.0.5"
 RUN installGithub.r "isglobal-brge/dsExposomeClient@${DSEXPOSOME_VERSION}" --deps=TRUE
 
 USER ${NB_USER}
