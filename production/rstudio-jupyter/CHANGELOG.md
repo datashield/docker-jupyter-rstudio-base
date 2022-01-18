@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.1.0...@datashield/rstudio-jupyter-v1.2.0) (2022-01-18)
+
+
+### Features
+
+* update dsHelper to 0.4.8 ([a4564a5](https://github.com/datashield/docker-jupyter-rstudio-base/commit/a4564a5ac9c4e1b85ba864e667f63decd9364cbf))
+
 # [1.1.0](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-v1.0.10...@datashield/rstudio-jupyter-v1.1.0) (2021-11-26)
 
 
