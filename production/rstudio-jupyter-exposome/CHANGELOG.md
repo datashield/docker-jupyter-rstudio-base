@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-exposome-v1.2.0...@datashield/rstudio-jupyter-exposome-v1.2.1) (2022-01-18)
+
+
+### Bug Fixes
+
+* update dsExposomeClient to 1.0.5 ([478d4f4](https://github.com/datashield/docker-jupyter-rstudio-base/commit/478d4f43c6ef05b89e4b682a3411e8b7b7a7237a))
+
 # [1.2.0](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-exposome-v1.1.0...@datashield/rstudio-jupyter-exposome-v1.2.0) (2022-01-10)
 
 
