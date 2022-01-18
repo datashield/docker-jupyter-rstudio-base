@@ -49,7 +49,7 @@ ENV DSBASECLIENT_VERSION "6.1.0"
 # Install DataSHIELD client
 RUN installGithub.r "datashield/dsBaseClient@${DSBASECLIENT_VERSION}"
 
-ENV DSHELPER_VERSION "0.4.7"
+ENV DSHELPER_VERSION "0.4.8"
 
 # Install dsHelper client 
 RUN installGithub.r "lifecycle-project/ds-helper@${DSHELPER_VERSION}"
