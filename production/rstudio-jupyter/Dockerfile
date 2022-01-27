@@ -7,7 +7,7 @@ RUN jupyter labextension install @jupyterlab/server-proxy
 USER root
 
 # Specify RStudio version
-ENV RSTUDIO_VERSION "1.4.1717"
+ENV RSTUDIO_VERSION "2021.09.2-382"
 # Make sure RStudio run when booting the image
 ENV RSESSION_PROXY_RSTUDIO_1_4=yes
 
