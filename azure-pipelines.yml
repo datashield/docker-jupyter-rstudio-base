@@ -1,10 +1,12 @@
 resources:
   pipelines:
-  - pipeline: ds-helper
+  - pipeline: helper
     source: lifecycle-project.ds-helper
     trigger:
       branches:
        - main
+      tags:
+       - '*'
       
 trigger:
 - main
@@ -20,8 +22,9 @@ jobs:
     - task: Bash@3
       displayName: Build all rserver images
       inputs:
-        filePath: .azure/build_docker.bash
+        filePath: .azure/build_docker.bash 
       env:
         DOCKERHUB_AUTH: $(DOCKERHUB_AUTH)
         GITHUB_TOKEN: $(GITHUB_TOKEN)
-        PACKAGE_VERSION: 
+        PACKAGE_NAME: $(Build.TriggeredBy.ProjectID) 
+        PACAKGE_MAJOR_VERSION: $(PACKAGE_MAJOR_VERSION)

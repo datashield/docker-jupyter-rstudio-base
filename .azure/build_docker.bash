@@ -27,30 +27,27 @@ do
   originImageDir=$(pwd)
   for imageDir in "${images[@]}"
   do
-    cd ${originImageDir}
-    cd "${imageDir}"
-    image=${imageDir::-1}
-    if [[ "${BUILD_REASON}" == "PullRequest" ]] 
-    then     
-      echo "  Building image: [ ${image} ]"  
-      CHANGES=$(git diff --name-only origin/${SYSTEM_PULLREQUEST_TARGETBRANCH} -- .)
-      if [[ ! -z "${CHANGES}" ]]
-      then
-        docker build . --pull --no-cache --force-rm -t "datashield/${image}:PR-${SYSTEM_PULLREQUEST_PULLREQUESTID}"
+    if [[ "$imageDir" =~ .*"${PACKAGE_NAME}".* ]]; then
+      cd ${originImageDir}
+      cd "${imageDir}"
+      image=${imageDir::-1}
+      if [[ "${BUILD_REASON}" == "PullRequest" ]] 
+      then     
+        echo "  Building image: [ ${image} ]"  
+        CHANGES=$(git diff --name-only origin/${SYSTEM_PULLREQUEST_TARGETBRANCH} -- .)
+        if [[ ! -z "${CHANGES}" ]]
+        then
+          docker build . --pull --no-cache --force-rm -t "datashield/${image}:PR-${SYSTEM_PULLREQUEST_PULLREQUESTID}"
+        else
+          echo "    Nothing to do for [ ${image} ]"
+        fi
       else
-        echo "    Nothing to do for [ ${image} ]"
-      fi
-    else
-      echo "  Release image: ${image}"
-      OLD_TAG=$(node -p "require('./package').version")
-      npm install --ci
-      npm run release --ci
-      TAG=$(node -p "require('./package').version")
-      if [[ "${TAG}" != "${OLD_TAG}" ]] 
-      then
-        docker build . --pull --no-cache --force-rm -t datashield/${image}:latest -t datashield/${image}:${TAG}
+        echo "  Release image: ${image}"
+        docker build . --pull --no-cache --force-rm -t datashield/${image}:latest -t datashield/${image}:${PACKAGE_MAJOR_VERSION}
         docker push datashield/${image} --all-tags
       fi
+    else 
+      echo "Skip ${imageDir::-1}"
     fi
   done
 done
