@@ -1,3 +1,11 @@
+resources:
+  pipelines:
+  - pipeline: ds-helper
+    source: lifecycle-project.ds-helper
+    trigger:
+      branches:
+       - main
+      
 trigger:
 - main
 
@@ -16,3 +24,4 @@ jobs:
       env:
         DOCKERHUB_AUTH: $(DOCKERHUB_AUTH)
         GITHUB_TOKEN: $(GITHUB_TOKEN)
+        PACKAGE_VERSION: 
