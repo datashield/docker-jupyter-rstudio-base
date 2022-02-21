@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-mediation-v1.1.0...@datashield/rstudio-jupyter-mediation-v1.2.0) (2022-02-21)
+
+
+### Features
+
+* **mediation:** update base layer to 1.2.0 ([d9e10f5](https://github.com/datashield/docker-jupyter-rstudio-base/commit/d9e10f5a1a2f96edce30b229489944b12ce6beaf))
+
 # [1.1.0](https://github.com/datashield/docker-jupyter-rstudio-base/compare/@datashield/rstudio-jupyter-mediation-v1.0.0...@datashield/rstudio-jupyter-mediation-v1.1.0) (2021-12-10)
 
 
