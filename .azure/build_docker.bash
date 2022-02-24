@@ -27,6 +27,7 @@ do
   originImageDir=$(pwd)
   for imageDir in "${images[@]}"
   do
+    echo "Building for [ ${PACKAGE_NAME} ]"
     if [[ "$imageDir" =~ .*"${PACKAGE_NAME}".* ]]; then
       cd ${originImageDir}
       cd "${imageDir}"
