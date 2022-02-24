@@ -1,4 +1,4 @@
-FROM datashield/rstudio-jupyter:1.1.0
+FROM datashield/rstudio-jupyter:1.2.0
 
 USER root
 
