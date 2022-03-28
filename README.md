@@ -5,12 +5,13 @@ Currently we support these analysis environments:
 
 Production
 - DataSHIELD base environment [dsBase](https://github.com/datashield/dsBaseClient)
-- Exposome environment [dsExposome](https://github.com/isglobal-brge/dsExposomeClient)
+- DataSHIELD Mediation environment [dsMediation](https://github.com/datashield/dsMediationClient)
 
 Development
-- DataSHIELD Base development environment [dsBase](https://github.com/datashield/dsBaseClient) --> master branch
+- DataSHIELD base development environment [dsBase](https://github.com/datashield/dsBaseClient) --> master branch
 
 You can you these images to support different analysis environments on the JupyterHub.
+
 ## Development
 We define 2 environment in development of these images.
 
