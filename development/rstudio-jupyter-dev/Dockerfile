@@ -1,4 +1,5 @@
-FROM jupyter/r-notebook:2021-09-01
+FROM jupyter/r-notebook:2022-07-18
+
 
 RUN python3 -m pip install jupyter-rsession-proxy
 RUN python3 -m pip install jupyter-server-proxy
@@ -34,10 +35,10 @@ RUN ln -s /opt/conda/lib/R/library/littler/examples/installGithub.r /usr/local/b
 ENV PATH=$PATH:/usr/lib/rstudio-server/bin
 
 # Specify dependency versions
-ENV OPALR_VERSION "1.4.1"
+ENV OPALR_VERSION "3.0.2"
 ENV DSI_VERSION "1.3.0"
 ENV DSOPAL_VERSION "1.3.1"
-ENV DSMOLGENIS_ARMADILLO_VERSION "v1.3.7"
+ENV DSMOLGENIS_ARMADILLO_VERSION "v1.4.0"
 
 # Install dependant packages for dsBaseClient
 RUN installGithub.r "molgenis/molgenis-r-datashield@${DSMOLGENIS_ARMADILLO_VERSION}" && \
@@ -63,5 +64,5 @@ ENV USER ${NB_USER}
 
 USER ${NB_USER}
 
-CMD ["/usr/lib/rstudio-server/bin/rserver", "--server-daemonize", "0", "--auth-none", "1", "--www-frame-origin", "same", "--www-verify-user-agent", "0"]
+CMD ["/usr/lib/rstudio-server/bin/rserver", "--server-user","${USER}","--server-daemonize", "0", "--auth-none", "1", "--www-frame-origin", "same", "--www-verify-user-agent", "0"]
 
