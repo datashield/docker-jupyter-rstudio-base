@@ -6,9 +6,7 @@ A dockerized [RStudio](https://www.rstudio.com/products/rstudio/download-server/
 You can use this package in any jupyter hub environment
 
 ## Contents
-There are 2 packages pre-installed on the Rstudio.
-- [dsBaseClient](https://github.com/datashield/dsBaseClient/tree/6.1.0)=6.1.0
-- [dsHelper](https://github.com/lifecycle-project/ds-helper)=0.0.0.9008
+This profile is make with the [uniform](https://www.datashield.org/help/standard-profiles-and-plaforms#athlete) packages 
 
 ## Usage
 You can use the image locally as well. Run the following snippet:
