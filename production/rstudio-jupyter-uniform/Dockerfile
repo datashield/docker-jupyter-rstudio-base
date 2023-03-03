@@ -2,7 +2,6 @@ FROM jupyter/r-notebook:r-4.2.2
 
 RUN python3 -m pip install jupyter-rsession-proxy
 RUN python3 -m pip install jupyter-server-proxy
-#Depricated -> uitzoeken
 RUN jupyter labextension install @jupyterlab/server-proxy
 
 USER root
@@ -15,7 +14,7 @@ ENV RSESSION_PROXY_RSTUDIO_1_4=yes
 
 # Install OS dependencies of RStudio
 RUN apt update && \
-    apt install -y libgsl0-dev zlib1g-dev libxml2-dev cmake libssl-dev libclang-dev libpq5 psmisc lsb-release
+    apt install -y libgsl0-dev zlib1g-dev libxml2-dev cmake libssl-dev libclang-dev libpq5 psmisc lsb-release r-base-dev libudunits2-dev
 
                             
 RUN curl --silent -L --fail https://download2.rstudio.org/server/jammy/amd64/rstudio-server-${RSTUDIO_VERSION}-amd64.deb > /tmp/rstudio.deb && \
@@ -72,6 +71,11 @@ RUN installGithub.r "Bioconductor/BiocManager@${BIOCMANAGER_VERSION}"
 RUN installBioc.r S4Vectors
 
 # Install dsExposome
+# sf & units is needed for dsExposome only github install isnt working
+
+RUN conda install r-units
+RUN conda install r-sf
+
 RUN installGithub.r "isglobal-brge/dsExposomeClient@${DSEXPOSOME_VERSION}" --deps=TRUE
 
 #install dsSurvival
@@ -84,6 +88,8 @@ RUN installGithub.r "datashield/dsMediationClient@${DSMEDIATION_VERSION}"
 RUN installGithub.r "transbioZI/dsMTLClient"
 
 #install dsOmics
+#dsOmics also needs this 
+RUN conda install r-qqconf
 RUN installGithub.r "isglobal-brge/dsOmicsClient@${DSOMICS_VERSION}"
 
 
