@@ -35,13 +35,13 @@ RUN ln -s /opt/conda/lib/R/library/littler/examples/installGithub.r /usr/local/b
 ENV PATH=$PATH:/usr/lib/rstudio-server/bin
 
 # Specify dependency versions
-ENV OPALR_VERSION "3.3.1"
+ENV OPALR_VERSION "3.4.0"
 ENV DSI_VERSION "1.5.0"
 ENV DSOPAL_VERSION "1.4.0"
-ENV DSMOLGENIS_ARMADILLO_VERSION "v2.0.0"
+ENV DSMOLGENIS_ARMADILLO_VERSION "v2.0.5"
 ENV DSBASECLIENT_VERSION "6.3.0"
-ENV DSHELPER_VERSION "0.4.21"
-ENV BIOCMANAGER_VERSION "v1.30.20"
+ENV DSHELPER_VERSION "1.1.0"
+ENV BIOCMANAGER_VERSION "v1.30.21"
 ENV DSEXPOSOME_VERSION "2.0.8"
 ENV DSMEDIATION_VERSION "0.0.3"
 ENV DSMTL_VERSION 0.10.0 
@@ -59,9 +59,8 @@ RUN installGithub.r "molgenis/molgenis-r-datashield@${DSMOLGENIS_ARMADILLO_VERSI
 RUN installGithub.r "datashield/dsBaseClient@${DSBASECLIENT_VERSION}"
 
 # Install dsHelper client 
-RUN installGithub.r "lifecycle-project/ds-helper@${DSHELPER_VERSION}"
-
-
+#RUN installGithub.r "lifecycle-project/ds-helper@${DSHELPER_VERSION}"
+RUN installGithub.r "https://github.com/timcadman/ds-helper@${DSHELPER_VERSION}"
 
 # Install BioConductor symlink for littler
 RUN ln -s /opt/conda/lib/R/library/littler/examples/installBioc.r /usr/local/bin/installBioc.r 
@@ -71,7 +70,7 @@ RUN installGithub.r "Bioconductor/BiocManager@${BIOCMANAGER_VERSION}"
 RUN installBioc.r S4Vectors
 
 # Install dsExposome
-# sf & units is needed for dsExposome only github install isnt working
+# sf & units is needed for dsExposome only github install isnt working so using conda
 
 RUN conda install r-units
 RUN conda install r-sf
