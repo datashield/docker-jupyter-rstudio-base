@@ -30,6 +30,7 @@ RUN chown -R ${NB_USER}:rstudio-server /var/lib/rstudio-server && \
 
 # Install littler to be able to make use of installGithub.r
 RUN R -e "install.packages('littler',dependencies=TRUE, repos='http://cran.rstudio.com/')"
+RUN R -e "install.packages('lme4',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
 RUN ln -s /opt/conda/bin/Rscript /usr/bin/r
 RUN ln -s /opt/conda/lib/R/library/littler/examples/installGithub.r /usr/local/bin/installGithub.r 
